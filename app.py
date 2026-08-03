@@ -29,5 +29,6 @@ def revenue_category():
     df=DATA.copy()
     cat=df.groupby('category')['price'].sum().reset_index()
     return jsonify({'labels':cat['category'].tolist(),'values':cat['price'].tolist()})
-if __name__=='__main__':
-    app.run(debug=True)
+if __name__ == '__main__':
+    port = int(os.getenv('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
