@@ -1,0 +1,73 @@
+/* Warm light theme for Indian Restaurant dashboard */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primary: #ff8c00; /* saffron orange */
+  --secondary: #f5c242; /* amber */
+  --bg: #fffdf5; /* very light cream */
+  --text: #2c1b0c; /* deep brown */
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.chart-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-4px);
+}
+
+.chart-card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: var(--secondary);
+  text-align: center;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  .chart-card h2 { font-size: 1.2rem; }
+}

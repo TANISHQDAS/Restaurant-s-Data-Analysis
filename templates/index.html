@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian Restaurant Data Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Indian Restaurant Analytics</h1>
+  </header>
+  <main>
+    <section class="chart-card">
+      <h2>Daily Sales Trend</h2>
+      <canvas id="salesTrendChart"></canvas>
+    </section>
+    <section class="chart-card">
+      <h2>Top‑Selling Dishes</h2>
+      <canvas id="topDishesChart"></canvas>
+    </section>
+    <section class="chart-card">
+      <h2>Revenue by Category</h2>
+      <canvas id="revenueCategoryChart"></canvas>
+    </section>
+  </main>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<!-- Chatbot UI -->
+<div id="chatbot" class="chatbot-closed">
+  <div class="chatbot-header" onclick="toggleChatbot()">
+    <span>Help</span>
+    <span class="chatbot-close">✖</span>
+  </div>
+  <div class="chatbot-messages" id="chatbot-messages"></div>
+  <div class="chatbot-input">
+    <input type="text" id="chatbot-input" placeholder="Ask a question..." onkeydown="if(event.key==='Enter') sendMessage()" />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+<button class="chatbot-toggle" onclick="toggleChatbot()">💬</button>
+<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+</body>
+</html>
