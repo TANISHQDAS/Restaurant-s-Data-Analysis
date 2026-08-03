@@ -8,3 +8,5 @@ env/
 build/
 Dist/
 *.egg-info/
+.system_generated/
+.user_uploaded/
